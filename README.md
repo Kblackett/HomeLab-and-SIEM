@@ -1,3 +1,2 @@
 # HomeLab-and-SIEM-
-
-This consist of a variety of cyber incidents which will be analyzed and documented, primarily focusing on the workflow required for remediation within a professional SOC environment, inclusive of base remediations or escalations
+This repository contains a variety of cybersecurity incident scenarios analyzed and documented within a home SOC lab environment. The focus is on log analysis, alert triage, investigation workflow, and documenting appropriate remediation or escalation steps commonly performed in a professional SOC environment.
