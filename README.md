@@ -6,4 +6,8 @@ This repository contains a variety of cybersecurity incident scenarios analyzed 
 
 **Architecture** 
 
-The lab architecture consists of three virtual machines: Kali Linux used to simulate attacker activity, Windows 10 serving as the target endpoint, and an Ubuntu Server instance hosting Splunk Enterprise for log ingestion, monitoring, and incident analysis. Windows event logs are forwarded to Splunk using Splunk Universal Forwarder to enable centralized monitoring and investigation of security events.
+The lab architecture consists of three virtual machines: Kali Linux used to simulate attacker activity, Windows 10 serving as the target endpoint, and an Ubuntu Server instance hosting Splunk Enterprise for log ingestion, monitoring, and incident analysis. 
+
+**Data Flow** 
+
+Event logs are generated on the target endpoint through direct system interaction (e.g., failed login attempts) or simulated attacker activity from Kali Linux. These logs are forwarded to Splunk Enterprise using Splunk Universal Forwarder to enable centralized monitoring, analysis, and investigation of security events.
