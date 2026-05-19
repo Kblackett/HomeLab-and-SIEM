@@ -17,4 +17,4 @@ These would all fall under the MITRE attack framework technique ID T1110, with t
 
 **Conclusion**
 
-The endpoint was logged into with the correct password after a number of tries which can be interpreted as a simple user error before being successful and no further remediation would be required.
+After noting the login attempts were from the same end point, from the same IP and the same location the endpoint was logged into with the correct password after a number of tries which can be interpreted as a simple user error before being successful and no further remediation would be required.
