@@ -1,1 +1,9 @@
+**Objectives**
+
+Simulate repeated failed login attempts and validate SIEM detection capabilities.
+
+Will be analysed using splunk after generating alerts. 
+
+
+
 
