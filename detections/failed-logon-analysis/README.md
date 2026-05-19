@@ -1,20 +1,61 @@
-**Objectives**
+## Objective
 
-Simulate repeated failed login attempts and validate SIEM detection capabilities.
-Will be analysed using splunk after generating alerts. 
+The objective of this exercise was to simulate repeated failed login attempts and validate detection and analysis capabilities using Splunk SIEM.
 
-**Attack Simulation**
+---
 
-A Windows endpoint was accessed on Windows 10, and multiple incorrect password attempts were performed to generate failed authentication events. (EventCode 4625)
+## Attack Simulation
+
+A Windows 10 endpoint was used to generate failed authentication events by repeatedly entering incorrect credentials for a local user account. This activity generated Windows Event ID 4625 (failed logon attempts).
+
 ![Windows VM Failed Login](screenshots/WindowsVMFailedLogin.png)
 
+---
 
-Once the logs were generated they were forwarded to Splunk for analysis. The first step was to index the logs around the time the logs were generated, for this exercise the 24 hour was enough. In a real environment this would be too broad of a time frame and would need to be narrowed for a focused view of the incident. The query Index=* was used to retrieve logs as well as EventCode=4625 for more specificity
-![FailedLogonQueries](screenshots/FailedLogonQueries.png)
+## Log Ingestion and SIEM Analysis
 
-When analyzing the logs specific information such as the source IP address, the account name, time, failure reason to compare to other log entries for contextualization and compared to other logs. Due to the nature of the simulation the other logs would show the same information however if it were a case where there were various failed logon attempts from a variety of different endpoints this is usually an indicator of a password spraying attack or if it were the same endpoint with failed logins in rapid succession there would be a possibility of a brute force attack.
-These would all fall under the MITRE attack framework technique ID T1110, with the sub technique IDs being T1110.003 for password spraying and  T1110.001 for password guessing. 
+Once generated, logs were forwarded to Splunk for analysis. The investigation focused on authentication events within a 24-hour time window to identify failed login patterns.
 
-**Conclusion**
+In a production environment, this time range would typically be narrowed to improve investigation efficiency based on alert timestamps.
 
-After noting the login attempts were from the same end point, from the same IP and the same location the endpoint was logged into with the correct password after a number of tries which can be interpreted as a simple user error before being successful and no further remediation would be required.
+The following query was used to retrieve relevant events:
+
+```
+index=* EventCode=4625
+```
+
+![Failed Logon Queries](screenshots/FailedLogonQueries.png)
+
+---
+
+## Investigation Findings
+
+Key fields were analyzed to determine the nature and scope of the activity:
+
+- Source IP address
+- Target username
+- Timestamp of events
+- Failure reason codes
+- Frequency of login attempts
+
+This analysis helps distinguish between isolated user error and potential attack patterns.
+
+In this simulation, all failed login attempts originated from a single endpoint within the controlled lab environment.
+
+If multiple endpoints or distributed sources were observed, this could indicate password spraying activity. A high volume of rapid attempts against a single account could indicate brute force behavior.
+
+---
+
+## MITRE ATT&CK Mapping
+
+- T1110 – Brute Force  
+  - T1110.001 – Password Guessing  
+  - T1110.003 – Password Spraying  
+
+---
+
+## Conclusion
+
+The successful authentication observed during testing was part of the controlled simulation and not indicative of malicious activity.
+
+No evidence of unauthorized access or lateral movement was identified, and no remediation actions were required beyond validation of detection capability.
