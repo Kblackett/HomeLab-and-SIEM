@@ -5,5 +5,5 @@ Will be analysed using splunk after generating alerts.
 
 **Attack Simulation**
 
-Booted up the Windows End Point and proceeded to incorrectly enter the password multiple times to generate the failed logon events
+A Windows endpoint was accessed on Windows 10, and multiple incorrect password attempts were performed to generate failed authentication events (EventCode 4625).
 ![Windows VM Failed Login](screenshots/WindowsVMFailedLogin.png)
