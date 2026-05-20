@@ -16,7 +16,14 @@ A powershell command will be encoded and executed on a windows 10 victim end poi
 
 The following queries were used to retrieve relevant events and exclude artefacts which were not relevant
 
-index=* "powershell" EventCode=4688  NOT "Files\\SplunkUniversalForwarder\\bin\\splunk"
+index=* "powershell" EventCode=4688 were used for the initial query
+
+![InitialQuery](screenshots/InitialPowerShellQuery.png)
+
+Upon running the queries it was realised that there were too many redundant splunk artifacts and an additional query was required which was "NOT "Files\\SplunkUniversalForwarder\\bin\\splunk" for further refinement
+
+![RefinedQuery](screenshots/PowerShellQuerySplunkExclusion.png)
+
 ---
 
 
