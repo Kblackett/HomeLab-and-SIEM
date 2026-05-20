@@ -14,11 +14,12 @@ A powershell command will be encoded and executed on a windows 10 victim end poi
 
 ## SIEM Analysis
 
-The following query was used to retrieve relevant events:
+The following queries were used to retrieve relevant events and exclude artefacts which were not relevant
 
----
 index=* "powershell" EventCode=4688  NOT "Files\\SplunkUniversalForwarder\\bin\\splunk"
 ---
+
+
 
 
 
