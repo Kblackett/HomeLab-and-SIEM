@@ -17,7 +17,6 @@ A powershell command will be encoded and executed on a windows 10 victim end poi
 The following query was used to retrieve relevant events:
 
 ---
-
 index=* "powershell" EventCode=4688  NOT "Files\\SplunkUniversalForwarder\\bin\\splunk"
 ---
 
