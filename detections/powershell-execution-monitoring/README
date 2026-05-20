@@ -8,6 +8,6 @@ The objective of this exercise was to simulate the execution of powershell comma
 
 A powershell command will be encoded and executed on victim end point which would generate the logs for further analysis in splunk
 
-![CommandExecution](screenshots/CommandEncodingAndExecution.png)
+![CommandExecution](/screenshots/CommandEncodingAndExecution.png)
 
 
