@@ -12,11 +12,7 @@ A Windows 10 endpoint was used to generate failed authentication events by repea
 
 ---
 
-## Log Ingestion and SIEM Analysis
-
-Once generated, logs were forwarded to Splunk for analysis. The investigation focused on authentication events within a 24-hour time window to identify failed login patterns.
-
-In a production environment, this time range would typically be narrowed to improve investigation efficiency based on alert timestamps.
+## SIEM Analysis
 
 The following query was used to retrieve relevant events:
 
